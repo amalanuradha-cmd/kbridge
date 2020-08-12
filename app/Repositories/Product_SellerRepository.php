@@ -18,7 +18,9 @@ class Product_SellerRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'product_id',
-        'seller_id'
+        'seller_id',
+        'price',
+        'stock'
     ];
 
     /**

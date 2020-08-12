@@ -15,14 +15,16 @@ use Illuminate\Database\Eloquent\Model as Model;
 class Product_Seller extends Model
 {
 
-    public $table = 'product__sellers';
+    public $table = 'product_seller';
     
 
 
 
     public $fillable = [
         'product_id',
-        'seller_id'
+        'seller_id',
+        'price',
+        'stock'
     ];
 
     /**
@@ -33,7 +35,9 @@ class Product_Seller extends Model
     protected $casts = [
         'id' => 'integer',
         'product_id' => 'string',
-        'seller_id' => 'string'
+        'seller_id' => 'string',
+        'price',
+        'stock'
     ];
 
     /**

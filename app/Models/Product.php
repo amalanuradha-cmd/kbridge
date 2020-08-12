@@ -27,7 +27,7 @@ class Product extends Model
         'image',
         'stock',
         'description',
-        'seller_id'
+        'price'
     ];
 
     /**
@@ -39,6 +39,7 @@ class Product extends Model
         'id' => 'integer',
         'name' => 'string',
         'image' => 'string',
+        'price' => 'string',
         'stock' => 'string',
         'description' => 'string'
     ];

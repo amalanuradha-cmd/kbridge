@@ -18,6 +18,9 @@ class CreateProductSellerTable extends Migration
             $table->increments('id');
             $table->string('product_id');
             $table->string('seller_id');
+            $table->string('price')->default(' ');
+            $table->string('stock')->default(' ');
+            
             $table->timestamps();
         });
     }

@@ -95,7 +95,7 @@ CREATE TABLE `oauth_access_tokens` (
 
 LOCK TABLES `oauth_access_tokens` WRITE;
 /*!40000 ALTER TABLE `oauth_access_tokens` DISABLE KEYS */;
-INSERT INTO `oauth_access_tokens` VALUES ('cabe4d4744fce66dec0977466ae1c60eec9303f1d5daeb1fe1ff19b4c52a0218c63a02e989760b02',1,1,'Personal Access Token','[]',0,'2020-08-12 11:46:21','2020-08-12 11:46:21','2021-08-12 17:16:21');
+INSERT INTO `oauth_access_tokens` VALUES ('39862cbc91f654760198f849124fea9d56d020af13145706d16da1660db748cb4231e845d622c45b',1,1,'Personal Access Token','[]',0,'2020-08-12 12:38:51','2020-08-12 12:38:51','2021-08-12 18:08:51');
 /*!40000 ALTER TABLE `oauth_access_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +157,7 @@ CREATE TABLE `oauth_clients` (
 
 LOCK TABLES `oauth_clients` WRITE;
 /*!40000 ALTER TABLE `oauth_clients` DISABLE KEYS */;
-INSERT INTO `oauth_clients` VALUES (1,NULL,'Laravel Personal Access Client','2YPbUph8VoNqa8OA9aRP2PFoO8O28l8MJoCI2zks',NULL,'http://localhost',1,0,0,'2020-08-12 11:46:11','2020-08-12 11:46:11');
+INSERT INTO `oauth_clients` VALUES (1,NULL,'Laravel Personal Access Client','bhXW78GalA6mOuCTzPAYCbGk1QblWEd3p7chpvVZ',NULL,'http://localhost',1,0,0,'2020-08-12 12:38:46','2020-08-12 12:38:46');
 /*!40000 ALTER TABLE `oauth_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,7 +183,7 @@ CREATE TABLE `oauth_personal_access_clients` (
 
 LOCK TABLES `oauth_personal_access_clients` WRITE;
 /*!40000 ALTER TABLE `oauth_personal_access_clients` DISABLE KEYS */;
-INSERT INTO `oauth_personal_access_clients` VALUES (1,1,'2020-08-12 11:46:11','2020-08-12 11:46:11');
+INSERT INTO `oauth_personal_access_clients` VALUES (1,1,'2020-08-12 12:38:46','2020-08-12 12:38:46');
 /*!40000 ALTER TABLE `oauth_personal_access_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,10 +248,12 @@ CREATE TABLE `product_seller` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `product_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `seller_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `stock` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -260,7 +262,7 @@ CREATE TABLE `product_seller` (
 
 LOCK TABLES `product_seller` WRITE;
 /*!40000 ALTER TABLE `product_seller` DISABLE KEYS */;
-INSERT INTO `product_seller` VALUES (1,'1','1',NULL,NULL);
+INSERT INTO `product_seller` VALUES (1,'1','1',' ',' ',NULL,NULL),(2,'2','2','100','49.99',NULL,NULL),(3,'3','3','1','stock',NULL,NULL);
 /*!40000 ALTER TABLE `product_seller` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,12 +278,12 @@ CREATE TABLE `products` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `stock` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `seller_id` int NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,7 +292,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'name','image','stock',1,'description','2020-08-12 11:24:58','2020-08-12 11:24:58');
+INSERT INTO `products` VALUES (1,'name','image','stock','1','description','2020-08-12 12:39:22','2020-08-12 12:39:22'),(2,'name','image','stock','1','description','2020-08-12 12:53:28','2020-08-12 12:53:28'),(3,'name','image','stock','1','description','2020-08-12 12:54:40','2020-08-12 12:54:40');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +318,7 @@ CREATE TABLE `sellers` (
 
 LOCK TABLES `sellers` WRITE;
 /*!40000 ALTER TABLE `sellers` DISABLE KEYS */;
-INSERT INTO `sellers` VALUES (1,'seller 1','2020-08-12 11:31:02','2020-08-12 11:31:02');
+INSERT INTO `sellers` VALUES (1,'seller 1','2020-08-12 12:41:00','2020-08-12 12:41:00');
 /*!40000 ALTER TABLE `sellers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -347,7 +349,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'amal','amal1@gmail.com',NULL,'$2y$10$mAeiRyFBIXHCy/xIahchlOtKXekonL94yGd1QnXHH3RVZrc/DRTlm',NULL,'2020-08-12 11:45:05','2020-08-12 11:45:05');
+INSERT INTO `users` VALUES (1,'amal','amal1@gmail.com',NULL,'$2y$10$U.Yl49a37wGrRAbmKfsqnuDKebIWjJLq/Rt9PqU9WrRqI1apyPn5.',NULL,'2020-08-12 12:38:32','2020-08-12 12:38:32');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -360,4 +362,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-12 22:54:18
+-- Dump completed on 2020-08-12 23:55:16

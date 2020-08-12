@@ -61,7 +61,7 @@ class ProductAPIController extends AppBaseController
         
         $product = Product::find($product_id);
 
-        $product->sellers()->attach($product_id);
+        $product->sellers()->attach($product_id,  ['price' => $product->price, 'stock' => $product->stock]);
 
         return $this->sendResponse($product->toArray(), 'Product saved successfully');
     }
