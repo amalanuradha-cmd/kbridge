@@ -253,7 +253,7 @@ CREATE TABLE `product_seller` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +262,7 @@ CREATE TABLE `product_seller` (
 
 LOCK TABLES `product_seller` WRITE;
 /*!40000 ALTER TABLE `product_seller` DISABLE KEYS */;
-INSERT INTO `product_seller` VALUES (1,'1','1',' ',' ',NULL,NULL),(2,'2','2','100','49.99',NULL,NULL),(3,'3','3','1','stock',NULL,NULL);
+INSERT INTO `product_seller` VALUES (1,'1','1',' ',' ',NULL,NULL),(2,'1','1','100','49.99',NULL,NULL),(3,'3','3','1','stock',NULL,NULL),(4,'4','4','1','stock',NULL,NULL);
 /*!40000 ALTER TABLE `product_seller` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +283,7 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -292,7 +292,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'name','image','stock','1','description','2020-08-12 12:39:22','2020-08-12 12:39:22'),(2,'name','image','stock','1','description','2020-08-12 12:53:28','2020-08-12 12:53:28'),(3,'name','image','stock','1','description','2020-08-12 12:54:40','2020-08-12 12:54:40');
+INSERT INTO `products` VALUES (1,'name','image','stock','1','description','2020-08-12 12:39:22','2020-08-12 12:39:22'),(2,'name','image','stock','1','description','2020-08-12 12:53:28','2020-08-12 12:53:28'),(3,'name','image','stock','1','description','2020-08-12 12:54:40','2020-08-12 12:54:40'),(4,'name','image','stock','1','description','2020-08-12 13:11:53','2020-08-12 13:11:53');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +309,7 @@ CREATE TABLE `sellers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +318,7 @@ CREATE TABLE `sellers` (
 
 LOCK TABLES `sellers` WRITE;
 /*!40000 ALTER TABLE `sellers` DISABLE KEYS */;
-INSERT INTO `sellers` VALUES (1,'seller 1','2020-08-12 12:41:00','2020-08-12 12:41:00');
+INSERT INTO `sellers` VALUES (1,'seller 1','2020-08-12 12:41:00','2020-08-12 12:41:00'),(2,'seller 1','2020-08-12 13:11:58','2020-08-12 13:11:58'),(3,'seller 1','2020-08-12 13:15:39','2020-08-12 13:15:39'),(4,'seller 1','2020-08-12 13:15:55','2020-08-12 13:15:55');
 /*!40000 ALTER TABLE `sellers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,4 +362,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-12 23:55:16
+-- Dump completed on 2020-08-13  0:19:35
