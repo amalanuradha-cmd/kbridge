@@ -71,7 +71,7 @@ class SellerAPIController extends AppBaseController
     public function show($id)
     {
         /** @var Seller $seller */
-        $seller = $this->sellerRepository->find($id);
+        $seller = $this->sellerRepository->find($id)->with('products')->get();
 
         if (empty($seller)) {
             return $this->sendError('Seller not found');

@@ -44,7 +44,7 @@ class Seller extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App\Models\Product', 'products_sellers');
+        return $this->belongsToMany('App\Models\Product');
     }
 
     
