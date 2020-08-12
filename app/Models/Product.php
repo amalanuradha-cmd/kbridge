@@ -26,7 +26,8 @@ class Product extends Model
         'name',
         'image',
         'stock',
-        'description'
+        'description',
+        'seller_id'
     ];
 
     /**
@@ -50,6 +51,11 @@ class Product extends Model
     public static $rules = [
         
     ];
+
+    public function sellers()
+    {
+        return $this->belongsToMany('App\Models\Seller');
+    }
 
     
 }

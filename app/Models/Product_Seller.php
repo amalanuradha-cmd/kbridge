@@ -5,22 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model as Model;
 
 /**
- * Class Seller
+ * Class Product_Seller
  * @package App\Models
- * @version August 12, 2020, 3:30 pm UTC
+ * @version August 12, 2020, 4:27 pm UTC
  *
- * @property string $name
+ * @property string $product_id
+ * @property string $seller_id
  */
-class Seller extends Model
+class Product_Seller extends Model
 {
 
-    public $table = 'sellers';
+    public $table = 'product__sellers';
     
 
 
 
     public $fillable = [
-        'name'
+        'product_id',
+        'seller_id'
     ];
 
     /**
@@ -30,7 +32,8 @@ class Seller extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'product_id' => 'string',
+        'seller_id' => 'string'
     ];
 
     /**
@@ -41,11 +44,6 @@ class Seller extends Model
     public static $rules = [
         
     ];
-
-    public function products()
-    {
-        return $this->belongsToMany('App\Models\Product', 'products_sellers');
-    }
 
     
 }

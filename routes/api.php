@@ -41,6 +41,10 @@ Route::group([
 
 
 
-Route::resource('products', 'ProductAPIController');
+Route::resource('products', 'API\ProductAPIController');
 
-Route::resource('sellers', 'SellerAPIController');
+Route::resource('sellers', 'API\SellerAPIController');
+
+
+
+Route::resource('product__sellers', 'Product_SellerAPIController');

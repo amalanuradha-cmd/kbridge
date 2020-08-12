@@ -57,6 +57,12 @@ class ProductAPIController extends AppBaseController
 
         $product = $this->productRepository->create($input);
 
+        $product_id = $product->id;
+        
+        $product = Product::find($product_id);
+
+        $product->sellers()->attach($product_id);
+
         return $this->sendResponse($product->toArray(), 'Product saved successfully');
     }
 
@@ -71,7 +77,7 @@ class ProductAPIController extends AppBaseController
     public function show($id)
     {
         /** @var Product $product */
-        $product = $this->productRepository->find($id);
+        $product = $this->productRepository->find($id)->with('sellers')->get();
 
         if (empty($product)) {
             return $this->sendError('Product not found');
